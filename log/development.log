@@ -1173,3 +1173,374 @@ Processing by MoviesController#show as HTML
   [1m[36mActor Load (0.3ms)[0m  [1mSELECT "actors".* FROM "actors" INNER JOIN "parts" ON "actors"."id" = "parts"."actor_id" WHERE "parts"."movie_id" = ?[0m  [["movie_id", 1]]
   Rendered movies/show.html.erb within layouts/application (1.9ms)
 Completed 200 OK in 46ms (Views: 44.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-07-21 21:48:51 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (1.1ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 121ms (Views: 105.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-21 21:48:51 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-21 21:48:51 -0400
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-07-21 21:48:51 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-21 21:48:51 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-07-21 21:48:51 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-21 21:48:51 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-07-21 21:48:51 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-21 21:48:51 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-07-21 21:48:51 -0400
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-07-21 21:48:51 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-07-21 21:49:00 -0400
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-07-21 21:49:00 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:00 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-21 21:49:00 -0400
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-07-21 21:49:00 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:00 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:00 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:00 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:00 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:00 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:00 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-07-21 21:49:31 -0400
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 54ms (Views: 52.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-07-21 21:49:31 -0400
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-07-21 21:49:31 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-21 21:49:31 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:31 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:31 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:31 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:31 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:31 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:31 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:31 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-07-21 21:49:43 -0400
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 65ms (Views: 64.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-07-21 21:49:43 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-21 21:49:43 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:43 -0400
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-07-21 21:49:43 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:43 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:43 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:43 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:43 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:43 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:43 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-07-21 21:49:55 -0400
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 71ms (Views: 70.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-07-21 21:49:55 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:55 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:55 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-21 21:49:55 -0400
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-07-21 21:49:55 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:55 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:55 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:55 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:55 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-21 21:49:55 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-07-21 21:50:37 -0400
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 58ms (Views: 57.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-07-21 21:50:37 -0400
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-07-21 21:50:37 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-21 21:50:37 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-21 21:50:37 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-21 21:50:37 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-21 21:50:37 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-07-21 21:50:37 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-07-21 21:50:37 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-07-21 21:50:37 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-21 21:50:37 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-07-21 21:50:50 -0400
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 56ms (Views: 55.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-07-21 21:50:50 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-21 21:50:50 -0400
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-07-21 21:50:50 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-21 21:50:50 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-21 21:50:50 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-21 21:50:50 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-07-21 21:50:50 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-07-21 21:50:50 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-07-21 21:50:50 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-21 21:50:50 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-07-21 21:51:47 -0400
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 46ms (Views: 45.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-07-21 21:51:47 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-21 21:51:47 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-21 21:51:47 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-21 21:51:47 -0400
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-07-21 21:51:47 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-21 21:51:47 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-07-21 21:51:47 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-21 21:51:47 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-07-21 21:51:47 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-07-21 21:51:47 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-07-21 21:53:17 -0400
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 55ms (Views: 54.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-07-21 21:53:17 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-21 21:53:17 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:17 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:18 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:18 -0400
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-07-21 21:53:18 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:18 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:18 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:18 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:18 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-07-21 21:53:48 -0400
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 50ms (Views: 49.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-07-21 21:53:48 -0400
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-07-21 21:53:48 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-21 21:53:48 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:48 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:48 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:48 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:48 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:48 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:48 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:48 -0400

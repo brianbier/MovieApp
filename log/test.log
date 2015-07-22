@@ -1,0 +1,1234 @@
+  [1m[36m (203.8ms)[0m  [1mCREATE TABLE "actors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "image" varchar(255), "bio" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (4.9ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "image" varchar(255), "release_year" varchar(255), "plot" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (4.7ms)[0m  [1mCREATE TABLE "parts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "movie_id" integer, "actor_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (5.0ms)[0m  [1mCREATE  INDEX "index_parts_on_actor_id" ON "parts" ("actor_id")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_parts_on_actor_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_parts_on_actor_id' AND type='index'
+
+  [1m[36m (7.6ms)[0m  [1mCREATE  INDEX "index_parts_on_movie_id" ON "parts" ("movie_id")[0m
+  [1m[35m (5.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (3.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (4.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150721234317')[0m
+  [1m[35m (4.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150721234304')
+  [1m[36m (3.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150721234256')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (13.2ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-21 23:59:23.976067"], ["updated_at", "2015-07-21 23:59:23.976067"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#index as HTML
+Completed 200 OK in 56ms (Views: 55.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:00:18.573118"], ["updated_at", "2015-07-22 00:00:18.573118"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#index as HTML
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies"
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:00:21.816834"], ["image", "scarves.jpg"], ["release_year", "1989"], ["title", "Scarves"], ["updated_at", "2015-07-22 00:00:21.816834"]]
+  [1m[35m (193.9ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 00:00:22.017127"], ["image", "jars.png"], ["release_year", "2014"], ["title", "Mason Jars"], ["updated_at", "2015-07-22 00:00:22.017127"]]
+  [1m[36m (6.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  Rendered movies/index.html.erb (22.9ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:03:53.154548"], ["image", "scarves.jpg"], ["release_year", "1989"], ["title", "Scarves"], ["updated_at", "2015-07-22 00:03:53.154548"]]
+  [1m[35m (26.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 00:03:53.185139"], ["image", "jars.png"], ["release_year", "2014"], ["title", "Mason Jars"], ["updated_at", "2015-07-22 00:03:53.185139"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  Rendered movies/index.html.erb (34.7ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:04:06.077350"], ["updated_at", "2015-07-22 00:04:06.077350"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#index as HTML
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:04:08.822747"], ["image", "scarves.jpg"], ["release_year", "1989"], ["title", "Scarves"], ["updated_at", "2015-07-22 00:04:08.822747"]]
+  [1m[35m (18.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 00:04:08.847210"], ["image", "jars.png"], ["release_year", "2014"], ["title", "Mason Jars"], ["updated_at", "2015-07-22 00:04:08.847210"]]
+  [1m[36m (36.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  Rendered movies/index.html.erb (7.8ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:04:46.542510"], ["updated_at", "2015-07-22 00:04:46.542510"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#index as HTML
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:04:49.117396"], ["image", "scarves.jpg"], ["release_year", "1989"], ["title", "Scarves"], ["updated_at", "2015-07-22 00:04:49.117396"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 00:04:49.123943"], ["image", "jars.png"], ["release_year", "2014"], ["title", "Mason Jars"], ["updated_at", "2015-07-22 00:04:49.123943"]]
+  [1m[36m (26.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  Rendered movies/index.html.erb (11.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:08:17.973119"], ["updated_at", "2015-07-22 00:08:17.973119"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:10:53.525317"], ["updated_at", "2015-07-22 00:10:53.525317"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+Completed 404 Not Found in 0ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:11:13.543669"], ["updated_at", "2015-07-22 00:11:13.543669"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+Completed 404 Not Found in 1ms
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:12:17.343329"], ["updated_at", "2015-07-22 00:12:17.343329"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 9]]
+Completed 200 OK in 11ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "plot", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:12:19.909330"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/oceans-11.jpg"], ["plot", "Dapper Danny Ocean (George Clooney) is a man of action. Less than 24 hours into his parole from a New Jersey penitentiary, the wry, chari..."], ["release_year", "2001"], ["title", "Ocean's 11"], ["updated_at", "2015-07-22 00:12:19.909330"]]
+  [1m[35m (17.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "George Timothy Clooney is an American actor, writer, producer, director, and activist. He has received three Golden Globe Awards for his ..."], ["created_at", "2015-07-22 00:12:20.003581"], ["first_name", "George"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/george-clooney.jpg"], ["last_name", "Clooney"], ["updated_at", "2015-07-22 00:12:20.003581"]]
+  [1m[36m (5.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Matthew Paige \"Matt\" Damon is an American actor, voice actor, screenwriter, producer, and philanthropist."], ["created_at", "2015-07-22 00:12:20.010641"], ["first_name", "Matt"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/matt-damon.jpg"], ["last_name", "Damon"], ["updated_at", "2015-07-22 00:12:20.010641"]]
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "William Bradley \"Brad\" Pitt is an American actor and producer. He has received a Golden Globe Award, a Screen Actors Guild Award, and thr..."], ["created_at", "2015-07-22 00:12:20.015387"], ["first_name", "Brad"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/brad-pitt.jpg"], ["last_name", "Pitt"], ["updated_at", "2015-07-22 00:12:20.015387"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Elliott Gould is an American actor. He began acting in Hollywood films during the 1960s, and has remained prolific ever since. "], ["created_at", "2015-07-22 00:12:20.019239"], ["first_name", "Elliot"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/elliot-gould.jpg"], ["last_name", "Gould"], ["updated_at", "2015-07-22 00:12:20.019239"]]
+  [1m[35m (15.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "Julia Fiona Roberts is an American actress and producer. She became a Hollywood star after headlining the romantic comedy Pretty Woman, w..."], ["created_at", "2015-07-22 00:12:20.035793"], ["first_name", "Julia"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/julia-roberts.jpg"], ["last_name", "Roberts"], ["updated_at", "2015-07-22 00:12:20.035793"]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 1], ["created_at", "2015-07-22 00:12:20.130611"], ["movie_id", 9], ["updated_at", "2015-07-22 00:12:20.130611"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 2], ["created_at", "2015-07-22 00:12:20.132527"], ["movie_id", 9], ["updated_at", "2015-07-22 00:12:20.132527"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 3], ["created_at", "2015-07-22 00:12:20.133573"], ["movie_id", 9], ["updated_at", "2015-07-22 00:12:20.133573"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 4], ["created_at", "2015-07-22 00:12:20.134590"], ["movie_id", 9], ["updated_at", "2015-07-22 00:12:20.134590"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 5], ["created_at", "2015-07-22 00:12:20.135597"], ["movie_id", 9], ["updated_at", "2015-07-22 00:12:20.135597"]]
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered movies/show.html.erb (2.6ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "plot", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:19:23.672148"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/oceans-11.jpg"], ["plot", "Dapper Danny Ocean (George Clooney) is a man of action. Less than 24 hours into his parole from a New Jersey penitentiary, the wry, chari..."], ["release_year", "2001"], ["title", "Ocean's 11"], ["updated_at", "2015-07-22 00:19:23.672148"]]
+  [1m[35m (21.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "George Timothy Clooney is an American actor, writer, producer, director, and activist. He has received three Golden Globe Awards for his ..."], ["created_at", "2015-07-22 00:19:23.773132"], ["first_name", "George"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/george-clooney.jpg"], ["last_name", "Clooney"], ["updated_at", "2015-07-22 00:19:23.773132"]]
+  [1m[36m (11.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Matthew Paige \"Matt\" Damon is an American actor, voice actor, screenwriter, producer, and philanthropist."], ["created_at", "2015-07-22 00:19:23.787149"], ["first_name", "Matt"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/matt-damon.jpg"], ["last_name", "Damon"], ["updated_at", "2015-07-22 00:19:23.787149"]]
+  [1m[35m (6.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "William Bradley \"Brad\" Pitt is an American actor and producer. He has received a Golden Globe Award, a Screen Actors Guild Award, and thr..."], ["created_at", "2015-07-22 00:19:23.795488"], ["first_name", "Brad"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/brad-pitt.jpg"], ["last_name", "Pitt"], ["updated_at", "2015-07-22 00:19:23.795488"]]
+  [1m[36m (6.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Elliott Gould is an American actor. He began acting in Hollywood films during the 1960s, and has remained prolific ever since. "], ["created_at", "2015-07-22 00:19:23.804337"], ["first_name", "Elliot"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/elliot-gould.jpg"], ["last_name", "Gould"], ["updated_at", "2015-07-22 00:19:23.804337"]]
+  [1m[35m (6.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "Julia Fiona Roberts is an American actress and producer. She became a Hollywood star after headlining the romantic comedy Pretty Woman, w..."], ["created_at", "2015-07-22 00:19:23.813578"], ["first_name", "Julia"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/julia-roberts.jpg"], ["last_name", "Roberts"], ["updated_at", "2015-07-22 00:19:23.813578"]]
+  [1m[36m (4.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 6], ["created_at", "2015-07-22 00:19:23.858827"], ["movie_id", 10], ["updated_at", "2015-07-22 00:19:23.858827"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 7], ["created_at", "2015-07-22 00:19:23.860640"], ["movie_id", 10], ["updated_at", "2015-07-22 00:19:23.860640"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 8], ["created_at", "2015-07-22 00:19:23.861642"], ["movie_id", 10], ["updated_at", "2015-07-22 00:19:23.861642"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 9], ["created_at", "2015-07-22 00:19:23.862688"], ["movie_id", 10], ["updated_at", "2015-07-22 00:19:23.862688"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 10], ["created_at", "2015-07-22 00:19:23.863705"], ["movie_id", 10], ["updated_at", "2015-07-22 00:19:23.863705"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered movies/show.html.erb (25.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "plot", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:19:35.302695"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/oceans-11.jpg"], ["plot", "Dapper Danny Ocean (George Clooney) is a man of action. Less than 24 hours into his parole from a New Jersey penitentiary, the wry, chari..."], ["release_year", "2001"], ["title", "Ocean's 11"], ["updated_at", "2015-07-22 00:19:35.302695"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "George Timothy Clooney is an American actor, writer, producer, director, and activist. He has received three Golden Globe Awards for his ..."], ["created_at", "2015-07-22 00:19:35.360442"], ["first_name", "George"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/george-clooney.jpg"], ["last_name", "Clooney"], ["updated_at", "2015-07-22 00:19:35.360442"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Matthew Paige \"Matt\" Damon is an American actor, voice actor, screenwriter, producer, and philanthropist."], ["created_at", "2015-07-22 00:19:35.365278"], ["first_name", "Matt"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/matt-damon.jpg"], ["last_name", "Damon"], ["updated_at", "2015-07-22 00:19:35.365278"]]
+  [1m[35m (14.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "William Bradley \"Brad\" Pitt is an American actor and producer. He has received a Golden Globe Award, a Screen Actors Guild Award, and thr..."], ["created_at", "2015-07-22 00:19:35.380570"], ["first_name", "Brad"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/brad-pitt.jpg"], ["last_name", "Pitt"], ["updated_at", "2015-07-22 00:19:35.380570"]]
+  [1m[36m (25.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Elliott Gould is an American actor. He began acting in Hollywood films during the 1960s, and has remained prolific ever since. "], ["created_at", "2015-07-22 00:19:35.408010"], ["first_name", "Elliot"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/elliot-gould.jpg"], ["last_name", "Gould"], ["updated_at", "2015-07-22 00:19:35.408010"]]
+  [1m[35m (4.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "Julia Fiona Roberts is an American actress and producer. She became a Hollywood star after headlining the romantic comedy Pretty Woman, w..."], ["created_at", "2015-07-22 00:19:35.415477"], ["first_name", "Julia"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/julia-roberts.jpg"], ["last_name", "Roberts"], ["updated_at", "2015-07-22 00:19:35.415477"]]
+  [1m[36m (13.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 11], ["created_at", "2015-07-22 00:19:35.463443"], ["movie_id", 11], ["updated_at", "2015-07-22 00:19:35.463443"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 12], ["created_at", "2015-07-22 00:19:35.465270"], ["movie_id", 11], ["updated_at", "2015-07-22 00:19:35.465270"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 13], ["created_at", "2015-07-22 00:19:35.466372"], ["movie_id", 11], ["updated_at", "2015-07-22 00:19:35.466372"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 14], ["created_at", "2015-07-22 00:19:35.467385"], ["movie_id", 11], ["updated_at", "2015-07-22 00:19:35.467385"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 15], ["created_at", "2015-07-22 00:19:35.468373"], ["movie_id", 11], ["updated_at", "2015-07-22 00:19:35.468373"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered movies/show.html.erb (4.7ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "plot", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:20:14.760036"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/oceans-11.jpg"], ["plot", "Dapper Danny Ocean (George Clooney) is a man of action. Less than 24 hours into his parole from a New Jersey penitentiary, the wry, chari..."], ["release_year", "2001"], ["title", "Ocean's 11"], ["updated_at", "2015-07-22 00:20:14.760036"]]
+  [1m[35m (3.5ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "George Timothy Clooney is an American actor, writer, producer, director, and activist. He has received three Golden Globe Awards for his ..."], ["created_at", "2015-07-22 00:20:14.819899"], ["first_name", "George"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/george-clooney.jpg"], ["last_name", "Clooney"], ["updated_at", "2015-07-22 00:20:14.819899"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Matthew Paige \"Matt\" Damon is an American actor, voice actor, screenwriter, producer, and philanthropist."], ["created_at", "2015-07-22 00:20:14.827019"], ["first_name", "Matt"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/matt-damon.jpg"], ["last_name", "Damon"], ["updated_at", "2015-07-22 00:20:14.827019"]]
+  [1m[35m (17.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "William Bradley \"Brad\" Pitt is an American actor and producer. He has received a Golden Globe Award, a Screen Actors Guild Award, and thr..."], ["created_at", "2015-07-22 00:20:14.846045"], ["first_name", "Brad"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/brad-pitt.jpg"], ["last_name", "Pitt"], ["updated_at", "2015-07-22 00:20:14.846045"]]
+  [1m[36m (13.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Elliott Gould is an American actor. He began acting in Hollywood films during the 1960s, and has remained prolific ever since. "], ["created_at", "2015-07-22 00:20:14.861676"], ["first_name", "Elliot"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/elliot-gould.jpg"], ["last_name", "Gould"], ["updated_at", "2015-07-22 00:20:14.861676"]]
+  [1m[35m (14.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "Julia Fiona Roberts is an American actress and producer. She became a Hollywood star after headlining the romantic comedy Pretty Woman, w..."], ["created_at", "2015-07-22 00:20:14.880599"], ["first_name", "Julia"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/julia-roberts.jpg"], ["last_name", "Roberts"], ["updated_at", "2015-07-22 00:20:14.880599"]]
+  [1m[36m (20.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 16], ["created_at", "2015-07-22 00:20:14.940824"], ["movie_id", 12], ["updated_at", "2015-07-22 00:20:14.940824"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 17], ["created_at", "2015-07-22 00:20:14.942807"], ["movie_id", 12], ["updated_at", "2015-07-22 00:20:14.942807"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 18], ["created_at", "2015-07-22 00:20:14.944006"], ["movie_id", 12], ["updated_at", "2015-07-22 00:20:14.944006"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 19], ["created_at", "2015-07-22 00:20:14.945435"], ["movie_id", 12], ["updated_at", "2015-07-22 00:20:14.945435"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 20], ["created_at", "2015-07-22 00:20:14.946453"], ["movie_id", 12], ["updated_at", "2015-07-22 00:20:14.946453"]]
+  [1m[35m (4.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered movies/show.html.erb (6.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "plot", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:21:09.936283"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/oceans-11.jpg"], ["plot", "Dapper Danny Ocean (George Clooney) is a man of action. Less than 24 hours into his parole from a New Jersey penitentiary, the wry, chari..."], ["release_year", "2001"], ["title", "Ocean's 11"], ["updated_at", "2015-07-22 00:21:09.936283"]]
+  [1m[35m (94.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "George Timothy Clooney is an American actor, writer, producer, director, and activist. He has received three Golden Globe Awards for his ..."], ["created_at", "2015-07-22 00:21:10.086393"], ["first_name", "George"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/george-clooney.jpg"], ["last_name", "Clooney"], ["updated_at", "2015-07-22 00:21:10.086393"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Matthew Paige \"Matt\" Damon is an American actor, voice actor, screenwriter, producer, and philanthropist."], ["created_at", "2015-07-22 00:21:10.091239"], ["first_name", "Matt"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/matt-damon.jpg"], ["last_name", "Damon"], ["updated_at", "2015-07-22 00:21:10.091239"]]
+  [1m[35m (15.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "William Bradley \"Brad\" Pitt is an American actor and producer. He has received a Golden Globe Award, a Screen Actors Guild Award, and thr..."], ["created_at", "2015-07-22 00:21:10.108046"], ["first_name", "Brad"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/brad-pitt.jpg"], ["last_name", "Pitt"], ["updated_at", "2015-07-22 00:21:10.108046"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Elliott Gould is an American actor. He began acting in Hollywood films during the 1960s, and has remained prolific ever since. "], ["created_at", "2015-07-22 00:21:10.112202"], ["first_name", "Elliot"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/elliot-gould.jpg"], ["last_name", "Gould"], ["updated_at", "2015-07-22 00:21:10.112202"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "Julia Fiona Roberts is an American actress and producer. She became a Hollywood star after headlining the romantic comedy Pretty Woman, w..."], ["created_at", "2015-07-22 00:21:10.116685"], ["first_name", "Julia"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/julia-roberts.jpg"], ["last_name", "Roberts"], ["updated_at", "2015-07-22 00:21:10.116685"]]
+  [1m[36m (15.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 21], ["created_at", "2015-07-22 00:21:10.163566"], ["movie_id", 13], ["updated_at", "2015-07-22 00:21:10.163566"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 22], ["created_at", "2015-07-22 00:21:10.165337"], ["movie_id", 13], ["updated_at", "2015-07-22 00:21:10.165337"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 23], ["created_at", "2015-07-22 00:21:10.166357"], ["movie_id", 13], ["updated_at", "2015-07-22 00:21:10.166357"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 24], ["created_at", "2015-07-22 00:21:10.167319"], ["movie_id", 13], ["updated_at", "2015-07-22 00:21:10.167319"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 25], ["created_at", "2015-07-22 00:21:10.168279"], ["movie_id", 13], ["updated_at", "2015-07-22 00:21:10.168279"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered movies/show.html.erb (3.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:42:20.137515"], ["updated_at", "2015-07-22 00:42:20.137515"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 14]]
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:42:41.525132"], ["updated_at", "2015-07-22 00:42:41.525132"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 14]]
+Completed 500 Internal Server Error in 3ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:43:36.299014"], ["updated_at", "2015-07-22 00:43:36.299014"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 14]]
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:44:23.505107"], ["updated_at", "2015-07-22 00:44:23.505107"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 14]]
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:45:34.634598"], ["updated_at", "2015-07-22 00:45:34.634598"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 14]]
+Completed 200 OK in 21ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "plot", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:45:37.404725"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/oceans-11.jpg"], ["plot", "Dapper Danny Ocean (George Clooney) is a man of action. Less than 24 hours into his parole from a New Jersey penitentiary, the wry, chari..."], ["release_year", "2001"], ["title", "Ocean's 11"], ["updated_at", "2015-07-22 00:45:37.404725"]]
+  [1m[35m (14.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "George Timothy Clooney is an American actor, writer, producer, director, and activist. He has received three Golden Globe Awards for his ..."], ["created_at", "2015-07-22 00:45:37.482921"], ["first_name", "George"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/george-clooney.jpg"], ["last_name", "Clooney"], ["updated_at", "2015-07-22 00:45:37.482921"]]
+  [1m[36m (5.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Matthew Paige \"Matt\" Damon is an American actor, voice actor, screenwriter, producer, and philanthropist."], ["created_at", "2015-07-22 00:45:37.490524"], ["first_name", "Matt"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/matt-damon.jpg"], ["last_name", "Damon"], ["updated_at", "2015-07-22 00:45:37.490524"]]
+  [1m[35m (4.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "William Bradley \"Brad\" Pitt is an American actor and producer. He has received a Golden Globe Award, a Screen Actors Guild Award, and thr..."], ["created_at", "2015-07-22 00:45:37.497070"], ["first_name", "Brad"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/brad-pitt.jpg"], ["last_name", "Pitt"], ["updated_at", "2015-07-22 00:45:37.497070"]]
+  [1m[36m (23.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Elliott Gould is an American actor. He began acting in Hollywood films during the 1960s, and has remained prolific ever since. "], ["created_at", "2015-07-22 00:45:37.522478"], ["first_name", "Elliot"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/elliot-gould.jpg"], ["last_name", "Gould"], ["updated_at", "2015-07-22 00:45:37.522478"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "Julia Fiona Roberts is an American actress and producer. She became a Hollywood star after headlining the romantic comedy Pretty Woman, w..."], ["created_at", "2015-07-22 00:45:37.530644"], ["first_name", "Julia"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/julia-roberts.jpg"], ["last_name", "Roberts"], ["updated_at", "2015-07-22 00:45:37.530644"]]
+  [1m[36m (12.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 26], ["created_at", "2015-07-22 00:45:37.567150"], ["movie_id", 14], ["updated_at", "2015-07-22 00:45:37.567150"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 27], ["created_at", "2015-07-22 00:45:37.569105"], ["movie_id", 14], ["updated_at", "2015-07-22 00:45:37.569105"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 28], ["created_at", "2015-07-22 00:45:37.570152"], ["movie_id", 14], ["updated_at", "2015-07-22 00:45:37.570152"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 29], ["created_at", "2015-07-22 00:45:37.571146"], ["movie_id", 14], ["updated_at", "2015-07-22 00:45:37.571146"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 30], ["created_at", "2015-07-22 00:45:37.572162"], ["movie_id", 14], ["updated_at", "2015-07-22 00:45:37.572162"]]
+  [1m[35m (3.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered movies/show.html.erb (2.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:45:46.575409"], ["updated_at", "2015-07-22 00:45:46.575409"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 15]]
+Completed 200 OK in 21ms (Views: 5.0ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "plot", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:45:49.173723"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/oceans-11.jpg"], ["plot", "Dapper Danny Ocean (George Clooney) is a man of action. Less than 24 hours into his parole from a New Jersey penitentiary, the wry, chari..."], ["release_year", "2001"], ["title", "Ocean's 11"], ["updated_at", "2015-07-22 00:45:49.173723"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "George Timothy Clooney is an American actor, writer, producer, director, and activist. He has received three Golden Globe Awards for his ..."], ["created_at", "2015-07-22 00:45:49.223509"], ["first_name", "George"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/george-clooney.jpg"], ["last_name", "Clooney"], ["updated_at", "2015-07-22 00:45:49.223509"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Matthew Paige \"Matt\" Damon is an American actor, voice actor, screenwriter, producer, and philanthropist."], ["created_at", "2015-07-22 00:45:49.227848"], ["first_name", "Matt"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/matt-damon.jpg"], ["last_name", "Damon"], ["updated_at", "2015-07-22 00:45:49.227848"]]
+  [1m[35m (9.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "William Bradley \"Brad\" Pitt is an American actor and producer. He has received a Golden Globe Award, a Screen Actors Guild Award, and thr..."], ["created_at", "2015-07-22 00:45:49.238524"], ["first_name", "Brad"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/brad-pitt.jpg"], ["last_name", "Pitt"], ["updated_at", "2015-07-22 00:45:49.238524"]]
+  [1m[36m (31.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Elliott Gould is an American actor. He began acting in Hollywood films during the 1960s, and has remained prolific ever since. "], ["created_at", "2015-07-22 00:45:49.271647"], ["first_name", "Elliot"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/elliot-gould.jpg"], ["last_name", "Gould"], ["updated_at", "2015-07-22 00:45:49.271647"]]
+  [1m[35m (64.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "Julia Fiona Roberts is an American actress and producer. She became a Hollywood star after headlining the romantic comedy Pretty Woman, w..."], ["created_at", "2015-07-22 00:45:49.339160"], ["first_name", "Julia"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/julia-roberts.jpg"], ["last_name", "Roberts"], ["updated_at", "2015-07-22 00:45:49.339160"]]
+  [1m[36m (69.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 31], ["created_at", "2015-07-22 00:45:49.441613"], ["movie_id", 15], ["updated_at", "2015-07-22 00:45:49.441613"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 32], ["created_at", "2015-07-22 00:45:49.443435"], ["movie_id", 15], ["updated_at", "2015-07-22 00:45:49.443435"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 33], ["created_at", "2015-07-22 00:45:49.444440"], ["movie_id", 15], ["updated_at", "2015-07-22 00:45:49.444440"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 34], ["created_at", "2015-07-22 00:45:49.445427"], ["movie_id", 15], ["updated_at", "2015-07-22 00:45:49.445427"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 35], ["created_at", "2015-07-22 00:45:49.446410"], ["movie_id", 15], ["updated_at", "2015-07-22 00:45:49.446410"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered movies/show.html.erb (2.6ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:45:56.540313"], ["updated_at", "2015-07-22 00:45:56.540313"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 16]]
+Completed 200 OK in 24ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "plot", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:45:59.422042"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/oceans-11.jpg"], ["plot", "Dapper Danny Ocean (George Clooney) is a man of action. Less than 24 hours into his parole from a New Jersey penitentiary, the wry, chari..."], ["release_year", "2001"], ["title", "Ocean's 11"], ["updated_at", "2015-07-22 00:45:59.422042"]]
+  [1m[35m (13.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "George Timothy Clooney is an American actor, writer, producer, director, and activist. He has received three Golden Globe Awards for his ..."], ["created_at", "2015-07-22 00:45:59.490586"], ["first_name", "George"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/george-clooney.jpg"], ["last_name", "Clooney"], ["updated_at", "2015-07-22 00:45:59.490586"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Matthew Paige \"Matt\" Damon is an American actor, voice actor, screenwriter, producer, and philanthropist."], ["created_at", "2015-07-22 00:45:59.495441"], ["first_name", "Matt"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/matt-damon.jpg"], ["last_name", "Damon"], ["updated_at", "2015-07-22 00:45:59.495441"]]
+  [1m[35m (7.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "William Bradley \"Brad\" Pitt is an American actor and producer. He has received a Golden Globe Award, a Screen Actors Guild Award, and thr..."], ["created_at", "2015-07-22 00:45:59.504252"], ["first_name", "Brad"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/brad-pitt.jpg"], ["last_name", "Pitt"], ["updated_at", "2015-07-22 00:45:59.504252"]]
+  [1m[36m (4.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Elliott Gould is an American actor. He began acting in Hollywood films during the 1960s, and has remained prolific ever since. "], ["created_at", "2015-07-22 00:45:59.509975"], ["first_name", "Elliot"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/elliot-gould.jpg"], ["last_name", "Gould"], ["updated_at", "2015-07-22 00:45:59.509975"]]
+  [1m[35m (6.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "Julia Fiona Roberts is an American actress and producer. She became a Hollywood star after headlining the romantic comedy Pretty Woman, w..."], ["created_at", "2015-07-22 00:45:59.518330"], ["first_name", "Julia"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/julia-roberts.jpg"], ["last_name", "Roberts"], ["updated_at", "2015-07-22 00:45:59.518330"]]
+  [1m[36m (3.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 36], ["created_at", "2015-07-22 00:45:59.555917"], ["movie_id", 16], ["updated_at", "2015-07-22 00:45:59.555917"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 37], ["created_at", "2015-07-22 00:45:59.557608"], ["movie_id", 16], ["updated_at", "2015-07-22 00:45:59.557608"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 38], ["created_at", "2015-07-22 00:45:59.558665"], ["movie_id", 16], ["updated_at", "2015-07-22 00:45:59.558665"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 39], ["created_at", "2015-07-22 00:45:59.559662"], ["movie_id", 16], ["updated_at", "2015-07-22 00:45:59.559662"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 40], ["created_at", "2015-07-22 00:45:59.560666"], ["movie_id", 16], ["updated_at", "2015-07-22 00:45:59.560666"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered movies/show.html.erb (1.9ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:46:24.176406"], ["updated_at", "2015-07-22 00:46:24.176406"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 17]]
+Completed 200 OK in 23ms (Views: 4.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "plot", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:46:26.774197"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/oceans-11.jpg"], ["plot", "Dapper Danny Ocean (George Clooney) is a man of action. Less than 24 hours into his parole from a New Jersey penitentiary, the wry, chari..."], ["release_year", "2001"], ["title", "Ocean's 11"], ["updated_at", "2015-07-22 00:46:26.774197"]]
+  [1m[35m (18.3ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "George Timothy Clooney is an American actor, writer, producer, director, and activist. He has received three Golden Globe Awards for his ..."], ["created_at", "2015-07-22 00:46:26.848456"], ["first_name", "George"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/george-clooney.jpg"], ["last_name", "Clooney"], ["updated_at", "2015-07-22 00:46:26.848456"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Matthew Paige \"Matt\" Damon is an American actor, voice actor, screenwriter, producer, and philanthropist."], ["created_at", "2015-07-22 00:46:26.853884"], ["first_name", "Matt"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/matt-damon.jpg"], ["last_name", "Damon"], ["updated_at", "2015-07-22 00:46:26.853884"]]
+  [1m[35m (55.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "William Bradley \"Brad\" Pitt is an American actor and producer. He has received a Golden Globe Award, a Screen Actors Guild Award, and thr..."], ["created_at", "2015-07-22 00:46:26.910407"], ["first_name", "Brad"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/brad-pitt.jpg"], ["last_name", "Pitt"], ["updated_at", "2015-07-22 00:46:26.910407"]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Elliott Gould is an American actor. He began acting in Hollywood films during the 1960s, and has remained prolific ever since. "], ["created_at", "2015-07-22 00:46:26.920607"], ["first_name", "Elliot"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/elliot-gould.jpg"], ["last_name", "Gould"], ["updated_at", "2015-07-22 00:46:26.920607"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "Julia Fiona Roberts is an American actress and producer. She became a Hollywood star after headlining the romantic comedy Pretty Woman, w..."], ["created_at", "2015-07-22 00:46:26.923972"], ["first_name", "Julia"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/julia-roberts.jpg"], ["last_name", "Roberts"], ["updated_at", "2015-07-22 00:46:26.923972"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 41], ["created_at", "2015-07-22 00:46:26.949711"], ["movie_id", 17], ["updated_at", "2015-07-22 00:46:26.949711"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 42], ["created_at", "2015-07-22 00:46:26.951590"], ["movie_id", 17], ["updated_at", "2015-07-22 00:46:26.951590"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 43], ["created_at", "2015-07-22 00:46:26.952614"], ["movie_id", 17], ["updated_at", "2015-07-22 00:46:26.952614"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 44], ["created_at", "2015-07-22 00:46:26.953605"], ["movie_id", 17], ["updated_at", "2015-07-22 00:46:26.953605"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 45], ["created_at", "2015-07-22 00:46:26.954599"], ["movie_id", 17], ["updated_at", "2015-07-22 00:46:26.954599"]]
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered movies/show.html.erb (2.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.8ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:48:26.361639"], ["updated_at", "2015-07-22 00:48:26.361639"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 18]]
+Completed 200 OK in 24ms (Views: 5.2ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "plot", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:48:29.086619"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/oceans-11.jpg"], ["plot", "Dapper Danny Ocean (George Clooney) is a man of action. Less than 24 hours into his parole from a New Jersey penitentiary, the wry, chari..."], ["release_year", "2001"], ["title", "Ocean's 11"], ["updated_at", "2015-07-22 00:48:29.086619"]]
+  [1m[35m (3.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "George Timothy Clooney is an American actor, writer, producer, director, and activist. He has received three Golden Globe Awards for his ..."], ["created_at", "2015-07-22 00:48:29.165557"], ["first_name", "George"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/george-clooney.jpg"], ["last_name", "Clooney"], ["updated_at", "2015-07-22 00:48:29.165557"]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Matthew Paige \"Matt\" Damon is an American actor, voice actor, screenwriter, producer, and philanthropist."], ["created_at", "2015-07-22 00:48:29.180746"], ["first_name", "Matt"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/matt-damon.jpg"], ["last_name", "Damon"], ["updated_at", "2015-07-22 00:48:29.180746"]]
+  [1m[35m (7.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "William Bradley \"Brad\" Pitt is an American actor and producer. He has received a Golden Globe Award, a Screen Actors Guild Award, and thr..."], ["created_at", "2015-07-22 00:48:29.191699"], ["first_name", "Brad"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/brad-pitt.jpg"], ["last_name", "Pitt"], ["updated_at", "2015-07-22 00:48:29.191699"]]
+  [1m[36m (7.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Elliott Gould is an American actor. He began acting in Hollywood films during the 1960s, and has remained prolific ever since. "], ["created_at", "2015-07-22 00:48:29.203313"], ["first_name", "Elliot"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/elliot-gould.jpg"], ["last_name", "Gould"], ["updated_at", "2015-07-22 00:48:29.203313"]]
+  [1m[35m (3.7ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "Julia Fiona Roberts is an American actress and producer. She became a Hollywood star after headlining the romantic comedy Pretty Woman, w..."], ["created_at", "2015-07-22 00:48:29.210512"], ["first_name", "Julia"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/julia-roberts.jpg"], ["last_name", "Roberts"], ["updated_at", "2015-07-22 00:48:29.210512"]]
+  [1m[36m (44.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 46], ["created_at", "2015-07-22 00:48:29.298140"], ["movie_id", 18], ["updated_at", "2015-07-22 00:48:29.298140"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 47], ["created_at", "2015-07-22 00:48:29.299983"], ["movie_id", 18], ["updated_at", "2015-07-22 00:48:29.299983"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 48], ["created_at", "2015-07-22 00:48:29.301017"], ["movie_id", 18], ["updated_at", "2015-07-22 00:48:29.301017"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 49], ["created_at", "2015-07-22 00:48:29.302033"], ["movie_id", 18], ["updated_at", "2015-07-22 00:48:29.302033"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 50], ["created_at", "2015-07-22 00:48:29.303044"], ["movie_id", 18], ["updated_at", "2015-07-22 00:48:29.303044"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered movies/show.html.erb (2.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:48:35.605997"], ["updated_at", "2015-07-22 00:48:35.605997"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 19]]
+Completed 200 OK in 22ms (Views: 5.0ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "plot", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:48:38.098152"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/oceans-11.jpg"], ["plot", "Dapper Danny Ocean (George Clooney) is a man of action. Less than 24 hours into his parole from a New Jersey penitentiary, the wry, chari..."], ["release_year", "2001"], ["title", "Ocean's 11"], ["updated_at", "2015-07-22 00:48:38.098152"]]
+  [1m[35m (62.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "George Timothy Clooney is an American actor, writer, producer, director, and activist. He has received three Golden Globe Awards for his ..."], ["created_at", "2015-07-22 00:48:38.234708"], ["first_name", "George"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/george-clooney.jpg"], ["last_name", "Clooney"], ["updated_at", "2015-07-22 00:48:38.234708"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Matthew Paige \"Matt\" Damon is an American actor, voice actor, screenwriter, producer, and philanthropist."], ["created_at", "2015-07-22 00:48:38.239976"], ["first_name", "Matt"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/matt-damon.jpg"], ["last_name", "Damon"], ["updated_at", "2015-07-22 00:48:38.239976"]]
+  [1m[35m (16.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "William Bradley \"Brad\" Pitt is an American actor and producer. He has received a Golden Globe Award, a Screen Actors Guild Award, and thr..."], ["created_at", "2015-07-22 00:48:38.258102"], ["first_name", "Brad"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/brad-pitt.jpg"], ["last_name", "Pitt"], ["updated_at", "2015-07-22 00:48:38.258102"]]
+  [1m[36m (11.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Elliott Gould is an American actor. He began acting in Hollywood films during the 1960s, and has remained prolific ever since. "], ["created_at", "2015-07-22 00:48:38.272396"], ["first_name", "Elliot"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/elliot-gould.jpg"], ["last_name", "Gould"], ["updated_at", "2015-07-22 00:48:38.272396"]]
+  [1m[35m (28.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "Julia Fiona Roberts is an American actress and producer. She became a Hollywood star after headlining the romantic comedy Pretty Woman, w..."], ["created_at", "2015-07-22 00:48:38.305719"], ["first_name", "Julia"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/julia-roberts.jpg"], ["last_name", "Roberts"], ["updated_at", "2015-07-22 00:48:38.305719"]]
+  [1m[36m (14.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 51], ["created_at", "2015-07-22 00:48:38.363828"], ["movie_id", 19], ["updated_at", "2015-07-22 00:48:38.363828"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 52], ["created_at", "2015-07-22 00:48:38.365690"], ["movie_id", 19], ["updated_at", "2015-07-22 00:48:38.365690"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 53], ["created_at", "2015-07-22 00:48:38.366899"], ["movie_id", 19], ["updated_at", "2015-07-22 00:48:38.366899"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 54], ["created_at", "2015-07-22 00:48:38.368045"], ["movie_id", 19], ["updated_at", "2015-07-22 00:48:38.368045"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 55], ["created_at", "2015-07-22 00:48:38.369078"], ["movie_id", 19], ["updated_at", "2015-07-22 00:48:38.369078"]]
+  [1m[35m (3.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered movies/show.html.erb (2.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "movies"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "movies"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "movies" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:49:00.380167"], ["updated_at", "2015-07-22 00:49:00.380167"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 20]]
+Completed 200 OK in 23ms (Views: 5.2ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "plot", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:49:04.839576"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/oceans-11.jpg"], ["plot", "Dapper Danny Ocean (George Clooney) is a man of action. Less than 24 hours into his parole from a New Jersey penitentiary, the wry, chari..."], ["release_year", "2001"], ["title", "Ocean's 11"], ["updated_at", "2015-07-22 00:49:04.839576"]]
+  [1m[35m (23.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "George Timothy Clooney is an American actor, writer, producer, director, and activist. He has received three Golden Globe Awards for his ..."], ["created_at", "2015-07-22 00:49:04.931623"], ["first_name", "George"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/george-clooney.jpg"], ["last_name", "Clooney"], ["updated_at", "2015-07-22 00:49:04.931623"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Matthew Paige \"Matt\" Damon is an American actor, voice actor, screenwriter, producer, and philanthropist."], ["created_at", "2015-07-22 00:49:04.937101"], ["first_name", "Matt"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/matt-damon.jpg"], ["last_name", "Damon"], ["updated_at", "2015-07-22 00:49:04.937101"]]
+  [1m[35m (55.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "William Bradley \"Brad\" Pitt is an American actor and producer. He has received a Golden Globe Award, a Screen Actors Guild Award, and thr..."], ["created_at", "2015-07-22 00:49:04.995264"], ["first_name", "Brad"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/brad-pitt.jpg"], ["last_name", "Pitt"], ["updated_at", "2015-07-22 00:49:04.995264"]]
+  [1m[36m (7.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["bio", "Elliott Gould is an American actor. He began acting in Hollywood films during the 1960s, and has remained prolific ever since. "], ["created_at", "2015-07-22 00:49:05.006302"], ["first_name", "Elliot"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/elliot-gould.jpg"], ["last_name", "Gould"], ["updated_at", "2015-07-22 00:49:05.006302"]]
+  [1m[35m (14.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "actors" ("bio", "created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["bio", "Julia Fiona Roberts is an American actress and producer. She became a Hollywood star after headlining the romantic comedy Pretty Woman, w..."], ["created_at", "2015-07-22 00:49:05.024199"], ["first_name", "Julia"], ["image", "http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/julia-roberts.jpg"], ["last_name", "Roberts"], ["updated_at", "2015-07-22 00:49:05.024199"]]
+  [1m[36m (18.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 56], ["created_at", "2015-07-22 00:49:05.079860"], ["movie_id", 20], ["updated_at", "2015-07-22 00:49:05.079860"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 57], ["created_at", "2015-07-22 00:49:05.081529"], ["movie_id", 20], ["updated_at", "2015-07-22 00:49:05.081529"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 58], ["created_at", "2015-07-22 00:49:05.082547"], ["movie_id", 20], ["updated_at", "2015-07-22 00:49:05.082547"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)  [["actor_id", 59], ["created_at", "2015-07-22 00:49:05.083515"], ["movie_id", 20], ["updated_at", "2015-07-22 00:49:05.083515"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "parts" ("actor_id", "created_at", "movie_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["actor_id", 60], ["created_at", "2015-07-22 00:49:05.084503"], ["movie_id", 20], ["updated_at", "2015-07-22 00:49:05.084503"]]
+  [1m[35m (12.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered movies/show.html.erb (2.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:50:42.127843"], ["updated_at", "2015-07-22 00:50:42.127843"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#index as HTML
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:51:21.378728"], ["updated_at", "2015-07-22 00:51:21.378728"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#index as HTML
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+  [1m[35mActor Load (0.2ms)[0m  SELECT "actors".* FROM "actors"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:51:24.125742"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 00:51:24.125742"]]
+  [1m[35m (392.1ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 00:51:24.523054"], ["first_name", "Lalith"], ["image", "test2.jpg"], ["last_name", "pie"], ["updated_at", "2015-07-22 00:51:24.523054"]]
+  [1m[36m (35.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  Rendered actors/index.html.erb (1.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:53:59.507721"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 00:53:59.507721"]]
+  [1m[35m (6.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 00:53:59.517474"], ["first_name", "Lalith"], ["image", "test2.jpg"], ["last_name", "pie"], ["updated_at", "2015-07-22 00:53:59.517474"]]
+  [1m[36m (12.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  Rendered actors/index.html.erb (8.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.0ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:54:38.908173"], ["updated_at", "2015-07-22 00:54:38.908173"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"65"}
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.9ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:56:18.940226"], ["updated_at", "2015-07-22 00:56:18.940226"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"65"}
+  [1m[35mActor Load (0.2ms)[0m  SELECT  "actors".* FROM "actors"  WHERE "actors"."id" = ? LIMIT 1  [["id", 65]]
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 00:56:57.637038"], ["updated_at", "2015-07-22 00:56:57.637038"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"65"}
+  [1m[35mActor Load (0.2ms)[0m  SELECT  "actors".* FROM "actors"  WHERE "actors"."id" = ? LIMIT 1  [["id", 65]]
+Completed 200 OK in 22ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:57:00.173575"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 00:57:00.173575"]]
+  [1m[35m (4.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 00:57:00.252422"], ["image", "scarves.jpg"], ["release_year", "1989"], ["title", "Scarves"], ["updated_at", "2015-07-22 00:57:00.252422"]]
+  [1m[36m (3.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 00:57:00.257411"], ["image", "jars.png"], ["release_year", "2014"], ["title", "Mason Jars"], ["updated_at", "2015-07-22 00:57:00.257411"]]
+  [1m[35m (19.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered actors/show.html.erb (1.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:00:38.945097"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:00:38.945097"]]
+  [1m[35m (3.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:00:39.001112"], ["image", "scarves.jpg"], ["release_year", "1989"], ["title", "Scarves"], ["updated_at", "2015-07-22 01:00:39.001112"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:00:39.005995"], ["image", "jars.png"], ["release_year", "2014"], ["title", "Mason Jars"], ["updated_at", "2015-07-22 01:00:39.005995"]]
+  [1m[35m (7.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered actors/show.html.erb (1.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:01:03.798314"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:01:03.798314"]]
+  [1m[35m (3.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:01:03.849920"], ["image", "scarves.jpg"], ["release_year", "1989"], ["title", "Scarves"], ["updated_at", "2015-07-22 01:01:03.849920"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:01:03.854082"], ["image", "jars.png"], ["release_year", "2014"], ["title", "Mason Jars"], ["updated_at", "2015-07-22 01:01:03.854082"]]
+  [1m[35m (8.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  Rendered actors/show.html.erb (9.9ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (15.3ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (12.9ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 01:02:01.609532"], ["updated_at", "2015-07-22 01:02:01.609532"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#index as HTML
+Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+  [1m[35mActor Load (0.3ms)[0m  SELECT "actors".* FROM "actors"
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:02:05.052162"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:02:05.052162"]]
+  [1m[35m (16.1ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:02:05.073725"], ["first_name", "Lalith"], ["image", "test2.jpg"], ["last_name", "pie"], ["updated_at", "2015-07-22 01:02:05.073725"]]
+  [1m[36m (26.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  Rendered actors/index.html.erb (8.4ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 01:02:10.445407"], ["updated_at", "2015-07-22 01:02:10.445407"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"70"}
+  [1m[35mActor Load (0.2ms)[0m  SELECT  "actors".* FROM "actors"  WHERE "actors"."id" = ? LIMIT 1  [["id", 70]]
+Completed 200 OK in 23ms (Views: 6.1ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:02:13.091931"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:02:13.091931"]]
+  [1m[35m (16.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:02:13.158818"], ["image", "scarves.jpg"], ["release_year", "1989"], ["title", "Scarves"], ["updated_at", "2015-07-22 01:02:13.158818"]]
+  [1m[36m (118.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:02:13.279470"], ["image", "jars.png"], ["release_year", "2014"], ["title", "Mason Jars"], ["updated_at", "2015-07-22 01:02:13.279470"]]
+  [1m[35m (27.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered actors/show.html.erb (11.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 01:02:52.126538"], ["updated_at", "2015-07-22 01:02:52.126538"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#index as HTML
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+  [1m[35mActor Load (0.1ms)[0m  SELECT "actors".* FROM "actors"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:02:54.672783"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:02:54.672783"]]
+  [1m[35m (3.8ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:02:54.681617"], ["first_name", "Lalith"], ["image", "test2.jpg"], ["last_name", "pie"], ["updated_at", "2015-07-22 01:02:54.681617"]]
+  [1m[36m (51.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  Rendered actors/index.html.erb (7.7ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (1.6ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 01:02:59.840334"], ["updated_at", "2015-07-22 01:02:59.840334"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"73"}
+  [1m[35mActor Load (0.2ms)[0m  SELECT  "actors".* FROM "actors"  WHERE "actors"."id" = ? LIMIT 1  [["id", 73]]
+Completed 200 OK in 22ms (Views: 5.0ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:03:04.186150"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:03:04.186150"]]
+  [1m[35m (17.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:03:04.263223"], ["image", "scarves.jpg"], ["release_year", "1989"], ["title", "Scarves"], ["updated_at", "2015-07-22 01:03:04.263223"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:03:04.267328"], ["image", "jars.png"], ["release_year", "2014"], ["title", "Mason Jars"], ["updated_at", "2015-07-22 01:03:04.267328"]]
+  [1m[35m (9.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered actors/show.html.erb (10.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.6ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 01:03:13.539757"], ["updated_at", "2015-07-22 01:03:13.539757"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#index as HTML
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+  [1m[35mActor Load (0.1ms)[0m  SELECT "actors".* FROM "actors"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:03:16.071810"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:03:16.071810"]]
+  [1m[35m (5.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:03:16.080684"], ["first_name", "Lalith"], ["image", "test2.jpg"], ["last_name", "pie"], ["updated_at", "2015-07-22 01:03:16.080684"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  Rendered actors/index.html.erb (8.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 01:03:21.264108"], ["updated_at", "2015-07-22 01:03:21.264108"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"76"}
+  [1m[35mActor Load (0.2ms)[0m  SELECT  "actors".* FROM "actors"  WHERE "actors"."id" = ? LIMIT 1  [["id", 76]]
+Completed 200 OK in 22ms (Views: 4.8ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:03:23.993251"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:03:23.993251"]]
+  [1m[35m (16.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:03:24.079912"], ["image", "scarves.jpg"], ["release_year", "1989"], ["title", "Scarves"], ["updated_at", "2015-07-22 01:03:24.079912"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:03:24.084646"], ["image", "jars.png"], ["release_year", "2014"], ["title", "Mason Jars"], ["updated_at", "2015-07-22 01:03:24.084646"]]
+  [1m[35m (14.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered actors/show.html.erb (10.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 01:03:32.539511"], ["updated_at", "2015-07-22 01:03:32.539511"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#index as HTML
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+  [1m[35mActor Load (0.1ms)[0m  SELECT "actors".* FROM "actors"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:03:35.266037"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:03:35.266037"]]
+  [1m[35m (3.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:03:35.273581"], ["first_name", "Lalith"], ["image", "test2.jpg"], ["last_name", "pie"], ["updated_at", "2015-07-22 01:03:35.273581"]]
+  [1m[36m (16.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  Rendered actors/index.html.erb (8.7ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 01:03:40.202768"], ["updated_at", "2015-07-22 01:03:40.202768"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"79"}
+  [1m[35mActor Load (0.2ms)[0m  SELECT  "actors".* FROM "actors"  WHERE "actors"."id" = ? LIMIT 1  [["id", 79]]
+Completed 200 OK in 21ms (Views: 4.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:03:42.751244"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:03:42.751244"]]
+  [1m[35m (2.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:03:42.807599"], ["image", "scarves.jpg"], ["release_year", "1989"], ["title", "Scarves"], ["updated_at", "2015-07-22 01:03:42.807599"]]
+  [1m[36m (3.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:03:42.813064"], ["image", "jars.png"], ["release_year", "2014"], ["title", "Mason Jars"], ["updated_at", "2015-07-22 01:03:42.813064"]]
+  [1m[35m (18.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered actors/show.html.erb (11.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 01:03:54.278002"], ["updated_at", "2015-07-22 01:03:54.278002"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#index as HTML
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+  [1m[35mActor Load (0.1ms)[0m  SELECT "actors".* FROM "actors"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:03:56.694294"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:03:56.694294"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:03:56.701043"], ["first_name", "Lalith"], ["image", "test2.jpg"], ["last_name", "pie"], ["updated_at", "2015-07-22 01:03:56.701043"]]
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  Rendered actors/index.html.erb (7.9ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 01:04:03.430330"], ["updated_at", "2015-07-22 01:04:03.430330"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"82"}
+  [1m[35mActor Load (0.2ms)[0m  SELECT  "actors".* FROM "actors"  WHERE "actors"."id" = ? LIMIT 1  [["id", 82]]
+Completed 200 OK in 23ms (Views: 5.1ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:04:05.991675"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:04:05.991675"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:04:06.049131"], ["image", "scarves.jpg"], ["release_year", "1989"], ["title", "Scarves"], ["updated_at", "2015-07-22 01:04:06.049131"]]
+  [1m[36m (11.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:04:06.064308"], ["image", "jars.png"], ["release_year", "2014"], ["title", "Mason Jars"], ["updated_at", "2015-07-22 01:04:06.064308"]]
+  [1m[35m (5.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered actors/show.html.erb (11.9ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 01:04:22.792340"], ["updated_at", "2015-07-22 01:04:22.792340"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#index as HTML
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+  [1m[35mActor Load (0.1ms)[0m  SELECT "actors".* FROM "actors"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:04:25.531400"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:04:25.531400"]]
+  [1m[35m (21.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:04:25.556276"], ["first_name", "Lalith"], ["image", "test2.jpg"], ["last_name", "pie"], ["updated_at", "2015-07-22 01:04:25.556276"]]
+  [1m[36m (15.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  Rendered actors/index.html.erb (8.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 01:04:30.730645"], ["updated_at", "2015-07-22 01:04:30.730645"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"85"}
+  [1m[35mActor Load (0.2ms)[0m  SELECT  "actors".* FROM "actors"  WHERE "actors"."id" = ? LIMIT 1  [["id", 85]]
+Completed 200 OK in 23ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:04:33.283608"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:04:33.283608"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:04:33.345293"], ["image", "scarves.jpg"], ["release_year", "1989"], ["title", "Scarves"], ["updated_at", "2015-07-22 01:04:33.345293"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:04:33.350086"], ["image", "jars.png"], ["release_year", "2014"], ["title", "Mason Jars"], ["updated_at", "2015-07-22 01:04:33.350086"]]
+  [1m[35m (31.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered actors/show.html.erb (11.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 01:04:40.218250"], ["updated_at", "2015-07-22 01:04:40.218250"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#index as HTML
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+  [1m[35mActor Load (0.2ms)[0m  SELECT "actors".* FROM "actors"
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:04:42.750098"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:04:42.750098"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:04:42.756453"], ["first_name", "Lalith"], ["image", "test2.jpg"], ["last_name", "pie"], ["updated_at", "2015-07-22 01:04:42.756453"]]
+  [1m[36m (13.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  Rendered actors/index.html.erb (7.8ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "actors"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "actors"
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "actors" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-07-22 01:04:48.140734"], ["updated_at", "2015-07-22 01:04:48.140734"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"88"}
+  [1m[35mActor Load (0.2ms)[0m  SELECT  "actors".* FROM "actors"  WHERE "actors"."id" = ? LIMIT 1  [["id", 88]]
+Completed 200 OK in 22ms (Views: 5.1ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "actors" ("created_at", "first_name", "image", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:04:50.770807"], ["first_name", "bana"], ["image", "test.jpg"], ["last_name", "apple"], ["updated_at", "2015-07-22 01:04:50.770807"]]
+  [1m[35m (3.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2015-07-22 01:04:50.826624"], ["image", "scarves.jpg"], ["release_year", "1989"], ["title", "Scarves"], ["updated_at", "2015-07-22 01:04:50.826624"]]
+  [1m[36m (3.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "movies" ("created_at", "image", "release_year", "title", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2015-07-22 01:04:50.832156"], ["image", "jars.png"], ["release_year", "2014"], ["title", "Mason Jars"], ["updated_at", "2015-07-22 01:04:50.832156"]]
+  [1m[35m (9.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  Rendered actors/show.html.erb (11.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction

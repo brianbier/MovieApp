@@ -1,5 +1,14 @@
 == Welcome to Rails
 
+For This applicaiton I used Ruby on rails which I consider one of the best and easy 
+framework to use and in this application you will see the associations of a many-to-many 
+relationship. I decided to create three models and I used the has_many :through association 
+to connect them to each other. For this project I decided to use my favorite movies and 
+associate them with a small description of all the actors of each of the movies.
+
+
+Here is more information on Ruby on rails and how this website was build.
+
 Rails is a web-application framework that includes everything needed to create
 database-backed web applications according to the Model-View-Control pattern.
 
@@ -24,6 +33,8 @@ unlike the relationship between the Active Record and Action Pack that is much
 more separate. Each of these packages can be used independently outside of
 Rails. You can read more about Action Pack in
 link:files/vendor/rails/actionpack/README.html.
+
+
 
 
 == Getting Started

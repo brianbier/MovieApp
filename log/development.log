@@ -1544,3 +1544,667 @@ Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:48 -040
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-21 21:53:48 -0400
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-07-21 23:21:35 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-07-21 23:21:41 -0400
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.8ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 127ms (Views: 108.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-07-21 23:21:41 -0400
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 53ms (Views: 51.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-07-21 23:21:42 -0400
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-07-21 23:21:42 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-21 23:21:42 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-21 23:21:42 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-21 23:21:42 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-21 23:21:42 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-07-21 23:21:42 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-07-21 23:21:42 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-07-21 23:21:42 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-21 23:21:42 -0400
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2015-07-21 23:21:50 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mActor Load (0.7ms)[0m  [1mSELECT "actors".* FROM "actors" INNER JOIN "parts" ON "actors"."id" = "parts"."actor_id" WHERE "parts"."movie_id" = ?[0m  [["movie_id", 1]]
+  Rendered movies/show.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 89ms (Views: 52.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-07-21 23:21:56 -0400
+
+
+Started GET "/actors" for 127.0.0.1 at 2015-07-21 23:22:01 -0400
+Processing by ActorsController#index as HTML
+  [1m[35mActor Load (0.6ms)[0m  SELECT "actors".* FROM "actors"
+  Rendered actors/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 59ms (Views: 57.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-07-21 23:22:01 -0400
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-07-21 23:22:01 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-07-21 23:22:01 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-07-21 23:22:01 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-07-21 23:22:01 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-07-21 23:22:01 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-07-21 23:22:01 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-07-21 23:22:01 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-07-21 23:22:01 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-07-21 23:22:01 -0400
+
+
+Started GET "/actors/1" for 127.0.0.1 at 2015-07-21 23:22:05 -0400
+Processing by ActorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mActor Load (0.2ms)[0m  [1mSELECT  "actors".* FROM "actors"  WHERE "actors"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" INNER JOIN "parts" ON "movies"."id" = "parts"."movie_id" WHERE "parts"."actor_id" = ?  [["actor_id", 1]]
+  Rendered actors/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 63ms (Views: 59.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-09-01 13:21:48 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-09-01 13:22:11 -0400
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 116ms (Views: 98.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-09-01 13:22:12 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-01 13:22:12 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-01 13:22:12 -0400
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-09-01 13:22:12 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-01 13:22:12 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-09-01 13:22:12 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-09-01 13:22:12 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-09-01 13:22:12 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-09-01 13:22:12 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-01 13:22:12 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-09-01 13:22:27 -0400
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-09-01 13:22:27 -0400
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-09-01 13:22:27 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-09-01 13:22:27 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-01 13:22:27 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-01 13:22:27 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-09-01 13:22:27 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-01 13:22:27 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-09-01 13:22:27 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-01 13:22:27 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-09-01 13:22:27 -0400
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-09-01 13:22:30 -0400
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-09-01 13:23:39 -0400
+
+ArgumentError (Missing :action key on routes definition, please check your routes.):
+  config/routes.rb:2:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (65.2ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-09-01 13:23:42 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-09-01 13:23:46 -0400
+
+ActionController::RoutingError (No route matches [GET] "/movies"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.5ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (42.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-01 13:23:59 -0400
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-09-01 13:24:02 -0400
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-09-01 13:26:42 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-09-01 13:26:45 -0400
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (1.3ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 54ms (Views: 49.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-09-01 13:26:45 -0400
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-09-01 13:26:45 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-01 13:26:45 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-09-01 13:26:45 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-01 13:26:45 -0400
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-09-01 13:26:45 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-01 13:26:45 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-09-01 13:26:45 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-09-01 13:26:45 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-01 13:26:45 -0400
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2015-09-01 13:26:54 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mActor Load (0.7ms)[0m  [1mSELECT "actors".* FROM "actors" INNER JOIN "parts" ON "actors"."id" = "parts"."actor_id" WHERE "parts"."movie_id" = ?[0m  [["movie_id", 1]]
+  Rendered movies/show.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 79ms (Views: 44.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2015-09-01 13:27:04 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mActor Load (7.6ms)[0m  [1mSELECT "actors".* FROM "actors" INNER JOIN "parts" ON "actors"."id" = "parts"."actor_id" WHERE "parts"."movie_id" = ?[0m  [["movie_id", 2]]
+  Rendered movies/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 43ms (Views: 34.2ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/movies/4" for 127.0.0.1 at 2015-09-01 13:27:08 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mActor Load (0.1ms)[0m  [1mSELECT "actors".* FROM "actors" INNER JOIN "parts" ON "actors"."id" = "parts"."actor_id" WHERE "parts"."movie_id" = ?[0m  [["movie_id", 4]]
+  Rendered movies/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-09-01 13:28:33 -0400
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-01 13:28:33 -0400
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-09-01 13:28:33 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-01 13:28:33 -0400
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-09-01 13:28:33 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-01 13:28:33 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-09-01 13:28:33 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-09-01 13:28:33 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-09-01 13:28:33 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-09-01 13:28:33 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-01 13:28:33 -0400
+
+
+Started GET "/movies/2" for 127.0.0.1 at 2015-09-01 13:28:36 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT  "movies".* FROM "movies"  WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mActor Load (0.1ms)[0m  SELECT "actors".* FROM "actors" INNER JOIN "parts" ON "actors"."id" = "parts"."actor_id" WHERE "parts"."movie_id" = ?  [["movie_id", 2]]
+  Rendered movies/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-09-01 13:28:42 -0400
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 63ms (Views: 62.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-09-01 13:28:46 -0400
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-09-01 13:29:42 -0400
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-09-01 13:29:45 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-09-01 13:29:49 -0400
+
+ActionController::RoutingError (No route matches [GET] "/movies"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (52.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-09-01 13:30:09 -0400
+
+ActionController::RoutingError (No route matches [GET] "/movies"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (0.7ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (47.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-09-01 13:30:23 -0400
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 47ms (Views: 43.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-09-01 13:30:24 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-09-01 13:30:24 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-01 13:30:24 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-01 13:30:24 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-01 13:30:24 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-09-01 13:30:24 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-01 13:30:24 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-09-01 13:30:24 -0400
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-09-01 13:30:24 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-09-01 13:30:24 -0400
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-09-01 13:31:36 -0400
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 34ms (Views: 33.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-09-01 13:31:36 -0400
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-09-01 13:31:36 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-01 13:31:36 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-09-01 13:31:36 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-01 13:31:36 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-09-01 13:31:36 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-01 13:31:36 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-09-01 13:31:36 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-09-01 13:31:36 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-01 13:31:36 -0400
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-09-01 13:31:39 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-01 13:31:43 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.1.1/lib/rails/templates/rails/welcome/index.html.erb (0.7ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-01 13:33:17 -0400
+
+NameError (undefined local variable or method `routes' for #<ActionDispatch::Routing::Mapper:0x007fe025191150>):
+  config/routes.rb:6:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (53.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-09-01 13:33:35 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.1.1/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2015-09-01 13:33:39 -0400
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies"
+  Rendered movies/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 40ms (Views: 36.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/movies.css?body=1" for 127.0.0.1 at 2015-09-01 13:33:39 -0400
+
+
+Started GET "/assets/actors.css?body=1" for 127.0.0.1 at 2015-09-01 13:33:39 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-09-01 13:33:39 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-09-01 13:33:39 -0400
+
+
+Started GET "/assets/communication.js?body=1" for 127.0.0.1 at 2015-09-01 13:33:39 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-09-01 13:33:39 -0400
+
+
+Started GET "/assets/actors.js?body=1" for 127.0.0.1 at 2015-09-01 13:33:39 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-09-01 13:33:39 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-09-01 13:33:39 -0400
+
+
+Started GET "/assets/movies.js?body=1" for 127.0.0.1 at 2015-09-01 13:33:39 -0400
+
+
+Started GET "/movie" for 127.0.0.1 at 2015-09-01 13:33:40 -0400
+
+ActionController::RoutingError (No route matches [GET] "/movie"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /Users/bbier/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (49.5ms)

@@ -1,6 +1,6 @@
 == Welcome to Rails
 
-For his applicaiton I used Ruby on rails which I consider one of the best and easy 
+For this application I used Ruby on rails which I consider one of the best and easy 
 framework to use and in this application you will see the associations of a many-to-many 
 relationship. I decided to create three models and I used the has_many :through association 
 to connect them to each other. For this project I decided to use my favorite movies and 
